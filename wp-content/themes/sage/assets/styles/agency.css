@@ -1,0 +1,1692 @@
+/*!
+ * Start Bootstrap - Agency v5.0.2 (https://startbootstrap.com/template-overviews/agency)
+ * Copyright 2013-2018 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
+ */
+
+@font-face {
+    font-family: ProximaNova;
+    src: url(../fonts/ProximaNovaRegular.ttf);
+}
+body {
+  overflow-x: hidden;
+  font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+p {
+  line-height: 1.75;
+}
+
+a {
+  color: #fed136;
+}
+
+a:hover {
+  color: #fec503;
+}
+.margin-zero {
+    margin: 0;
+}
+.text-primary {
+  color: #fed136 !important;
+}
+.flex {
+    display: flex !important;
+
+}
+.flex-col {
+    display: flex !important;
+    flex-flow: column wrap;
+}
+.perfect-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.width-100 {
+    width: 100% !important;
+}
+.perfect-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+.padding-zero {
+    padding: 0;
+}
+section {
+  padding: 40px 0;
+}
+
+section h2.section-heading {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+section h3.section-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 75px;
+  text-transform: none;
+  font-family: 'ProximaNova Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+section .section-heading h4 {
+    font-family: ProximaNova;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.28;
+    letter-spacing: 2.2px;
+    color: #129e4a;
+    text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+}
+
+.btn {
+  font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-weight: 700;
+}
+
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.btn-primary {
+  background-color: #fed136;
+  border-color: #fed136;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+  background-color: #fec810 !important;
+  border-color: #fec810 !important;
+  color: white;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+}
+
+::-moz-selection {
+  background: #fed136;
+  text-shadow: none;
+}
+
+::selection {
+  background: #fed136;
+  text-shadow: none;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+#mainNav {
+    background-color: #1b4296;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.43);
+}
+.custom-nav {
+    background-color: #1b4296 !important;
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+}
+#mainNav .navbar-toggler {
+  font-size: 12px;
+  right: 0;
+  padding: 13px;
+  text-transform: uppercase;
+  color: white;
+  border: 0;
+  background-color: #fed136;
+  font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#mainNav .navbar-brand {
+  color: #fed136;
+  font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+  color: #fec503;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2.9px;
+    color: #ffffff;
+    font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: #fed136;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+  }
+  #mainNav .navbar-brand {
+    font-size: 1.75em;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    padding: 1.1em 26px;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+      background-color: #1b4296;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.43);
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.25em;
+    padding: 12px 0;
+  }
+}
+
+header.masthead {
+  text-align: center;
+  color: white;
+  background-image: url('/wp-content/themes/sage/assets/images/bg.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+header.contact.sub-masthead {
+    background-image: url('/wp-content/themes/sage/assets/images/sub-header.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 389px;
+}
+header.about.sub-masthead {
+    background-image: url('/wp-content/themes/sage/assets/images/about-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 389px;
+}
+header.product.sub-masthead {
+    background-image: url('/wp-content/themes/sage/assets/images/product-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 389px;
+}
+header.masthead .intro-text {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+header.masthead .intro-text .intro-lead-in {
+  font-size: 22px;
+  font-style: italic;
+  line-height: 22px;
+  margin-bottom: 25px;
+  font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+header.masthead .intro-text .intro-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 25px;
+  font-family: 'Fjalla One', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@media (min-width: 768px) {
+  header.masthead .intro-text {
+    padding-top: 366px;
+    padding-bottom: 248px;
+  }
+  header.masthead .intro-text .intro-lead-in {
+      font-family: ProximaNova;
+      font-size: 17px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 4.7px;
+      color: #ffffff;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  header.masthead .intro-text .intro-heading {
+      font-size: 63px;
+      color: #ffffff;
+      /*margin-bottom: 50px;*/
+      font-family: 'Fjalla One', sans-serif;
+      font-weight: normal;
+  }
+}
+.services .img-heading {
+    background-image: linear-gradient(264deg, #3e7cb1, #24499a);
+    padding: 18px 45px 18px 15px;
+    text-align: right;
+}
+.services .img-heading span{
+    font-family: "Fjalla One";
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    color: #ffffff;
+    text-transform: uppercase;
+
+}
+.services .custom-width {
+    width: 100%;
+}
+.services .customer-service {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.services .customer-service .service-heading {
+    font-family: ProximaNova;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.2px;
+    color: #129e4a;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+.services .customer-service .text-muted {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #5c5a5a;
+}
+.services .customer-service .btn {
+    text-align: left;
+    display: flex;
+    padding: 0;
+}
+.services .customer-service .btn a{
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.7px;
+    color: #1b4296;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.services .customer-service .btn a img{
+    padding-left: 12px;
+}
+.quicklinks {
+    text-align: right !important;
+}
+
+.quicklinks .quick-link-contain {
+    width: 234px;
+    height: 48px;
+    border-radius: 6px;
+    box-shadow: 0 4px 3px 0 #1b4296;
+    background-color: #ffa400;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.quicklinks .quick-link-contain span {
+    font-family: ProximaNova;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 2.1px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.nac-certified .btn a{
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.7px;
+    color: #1b4296;
+    text-decoration: underline;
+}
+.nac-certified {
+    padding-bottom: 80px;
+}
+.nac-certified .btn a img{
+    padding-left: 12px;
+}
+.nac-certified .img-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.nac-certified .img-container .img-1{
+    position: absolute;
+    top: 0px;
+    left: 37%;
+}
+.nac-certified .img-container .img-2{
+    position: absolute;
+    top: 50px;
+
+}
+.save-money {
+    background: url('/wp-content/themes/sage/assets/images/save-money-bg.png') no-repeat center center;
+    background-size: cover;
+    padding-top: 170px;
+    padding-bottom: 115px;
+}
+.save-money .main-heading {
+    font-family: "Fjalla One";
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+}
+.save-money .sub-heading {
+    font-family: ProximaNova;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 4.7px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.save-money .text-muted {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #ffffff !important;
+    text-align: left;
+}
+.save-money .custom-hr {
+    margin: 27px 0;
+    background-color: #ffa400;
+}
+.nace-institute {
+    background-image: linear-gradient(276deg, #b4ec51, #129e4a);
+    padding-top: 27px;
+}
+.nace-institute .perfect-center {
+    align-items: flex-end;
+}
+.nace-institute .text-muted {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #ffffff !important;
+}
+section#contact .section-heading {
+  color: #fff;
+}
+
+section#contact .form-group {
+  margin-bottom: 25px;
+}
+
+section#contact .form-group input,
+section#contact .form-group textarea {
+  padding: 20px;
+}
+
+section#contact .form-group input.form-control {
+  height: auto;
+}
+
+section#contact .form-group textarea.form-control {
+  height: 248px;
+}
+
+section#contact .form-control:focus {
+  border-color: #fed136;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+section#contact ::-webkit-input-placeholder {
+  font-weight: 700;
+  color: #ced4da;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+section#contact :-moz-placeholder {
+  font-weight: 700;
+  color: #ced4da;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+section#contact ::-moz-placeholder {
+  font-weight: 700;
+  color: #ced4da;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+section#contact :-ms-input-placeholder {
+  font-weight: 700;
+  color: #ced4da;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.north-basin {
+    padding-top: 90px;
+    padding-bottom: 75px;
+}
+.north-basin .img-container {
+    height: 155px;
+    background-color: #d8d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.north-basin .img-heading {
+    font-family: ProximaNova;
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    color: #129e4a;
+    text-transform: uppercase;
+}
+.north-basin p{
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: 0.7px;
+    color: #5c5a5a;
+}
+.north-basin .img-heading h4 a {
+    text-decoration: none;
+    color: #129e4a;
+    font-family: "Fjalla One";
+    font-weight: normal;
+}
+.north-basin .img-heading p a{
+    text-decoration: none;
+    color: #5c5a5a;
+}
+.make-it-happen {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    background-image: url('/wp-content/themes/sage/assets/images/blue-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+.make-it-happen.grey-bg {
+    background-image: url('/wp-content/themes/sage/assets/images/make-it-happen-bg.png');
+}
+.make-it-happen .section-heading {
+    font-family: "Fjalla One";
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    color: #ffffff;
+}
+.make-it-happen .section-details {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #ffffff;
+}
+.make-it-happen input, .make-it-happen textarea {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    outline: none;
+    border-radius: 6px !important;
+    border: 2px solid #fff !important;
+}
+.make-it-happen input.name {
+    background-image: url(../img/man-user.png);
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    text-indent: 25px;
+}
+.make-it-happen input.phone {
+    background-image: url(../img/smartphone-call.png);
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    text-indent: 25px;
+}
+.make-it-happen input.email {
+    background-image: url(../img/mail-black-envelope-symbol.png);
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    text-indent: 25px;
+}
+.make-it-happen input.company {
+    background-image: url(../img/company.png);
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    text-indent: 25px;
+}
+.make-it-happen textarea.message {
+    background-image: url(../img/comments.png);
+    background-repeat: no-repeat;
+    background-position: 4% 15%;
+    text-indent: 25px;
+}
+.make-it-happen input::placeholder,  .make-it-happen textarea::placeholder{
+    color: #fff !important;
+    opacity: 1 !important; /* Firefox */
+}
+.make-it-happen button[type='submit'] {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.7px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.make-it-happen .submit {
+    text-align: right;
+}
+.serving-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #5c5a5a;
+}
+.serving-section .portfolio-link {
+    display: flex;
+    justify-content: center;
+}
+.serving-section .portfolio-link img{
+    height: 450px;
+}
+.serving-section .flex-end {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 130px;
+}
+.serving-section .section-heading {
+    font-family: "Fjalla One";
+    font-size: 56.7px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.8px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.serving-section .section-subheading {
+    font-family: ProximaNova;
+    font-size: 16.2px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.7px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+.serving-section .section-details .graph-representation {
+    display: flex;
+    flex-flow: row wrap;
+}
+.serving-section .section-details .graph-representation h5{
+    font-family: ProximaNova;
+    font-size: 16.2px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.5px;
+    color: #ffffff;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.serving-section .section-details .graph-representation h5 .blue {
+    width: 14px;
+    height: 14px;
+    background-color: #1b4296;
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.serving-section .section-details .graph-representation h5 .yellow {
+    width: 14px;
+    height: 14px;
+    background-color: #ffa400;
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.portfolio-modal .pull-right {
+    float: right;
+    margin-top: 10px;
+}
+.autoplay .slick-slide img {
+    display: block;
+    width: 100%;
+    height: 237px;
+}
+
+.autoplay .slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+.autoplay .slick-next , .autoplay .slick-prev {
+    display: none !important;
+}
+.superior-coating {
+    padding-top: 90px;
+    padding-bottom: 75px;
+}
+.superior-coating .section-heading{
+    font-family: ProximaNova;
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    color: #129e4a;
+    text-transform: uppercase;
+    margin-bottom: 19px;
+}
+.superior-coating .section-details{
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #5c5a5a;
+}
+.superior-coating .multiple-logos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.superior-coating .multiple-logos img{
+    width: 135px;
+    padding-left: 10px;
+}
+.superior-coating .multiple-logos img:last-child {
+    padding-top: 13px;
+}
+.modal-header {
+    text-align: right !important;
+    display: flex;
+    justify-content: flex-end;
+}
+.modal-header a {
+    text-align: right;
+    cursor: pointer;
+}
+/*css for tabs*/
+.tabs {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+#tab-button {
+    display: table;
+    table-layout: fixed;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#tab-button li {
+    display: table-cell;
+    width: auto;
+}
+#tab-button li a {
+    display: block;
+    padding: 6px 20px;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #1b4296;
+    text-align: center;
+    text-decoration: none;
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    color: #ffa400;
+    text-transform: uppercase;
+}
+#tab-button li:not(:first-child) a {
+    border-left: none;
+}
+#tab-button li a:hover,
+#tab-button .is-active a {
+    border-bottom-color: transparent;
+    border-radius: 6px;
+    background-color: #ffa400;
+    color: #fff;
+    text-transform: uppercase;
+}
+.tab-contents {
+    padding: 80px;
+    border: 1px solid #ddd;
+}
+
+.tab-contents h2{
+    font-family: "Fjalla One";
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    color: #1b4296;
+    text-transform: uppercase;
+}
+.tab-contents .executive {
+    padding: 15px 0;
+}
+.tab-contents .executive .img-container {
+    height: 238px;
+    background-color: #d8d8d8;
+}
+.tab-contents .executive h5 {
+    font-family: "Fjalla One";
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.9px;
+    color: #1b4296;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+.tab-contents .executive h6 {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.7px;
+    color: #129e4a;
+    text-transform: uppercase;
+}
+.tab-contents .executive p {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #5c5a5a;
+}
+.tab-button-outer {
+    display: none;
+}
+.tab-contents {
+    margin-top: 20px;
+}
+.tab-contents.scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+@media screen and (min-width: 768px) {
+    .tab-button-outer {
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+    .tab-select-outer {
+        display: none;
+    }
+    .tab-contents {
+        position: relative;
+        top: -1px;
+        margin-top: 0;
+        height: 720px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+}
+/*end css for tabs*/
+
+.coater-section {
+    padding: 140px 0;
+}
+.coater-section .section-heading {
+    font-family: "Fjalla One";
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    color: #1b4296;
+    text-transform: uppercase;
+}
+.coater-section .custom-padding {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+.coater-section .row-heading {
+    font-family: ProximaNova;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.2px;
+    color: #129e4a;
+    text-transform: uppercase;
+}
+.coater-section .row-details {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #5c5a5a;
+    margin: 0;
+}
+.carbon-steel {
+    padding: 140px 0;
+}
+.carbon-steel .section-heading{
+    font-family: "Fjalla One";
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    color: #1b4296;
+    text-transform: uppercase;
+}
+.carbon-steel .section-subheading {
+    font-family: ProximaNova;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.2px;
+    color: #129e4a;
+    text-transform: uppercase;
+}
+.carbon-steel h4.custom-padding{
+    padding-top: 35px;
+}
+.carbon-steel .section-details {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: 0.7px;
+    color: #5c5a5a;
+}
+.carbon-steel .graph-2 {
+    padding-top: 28px;
+}
+.carbon-steel .graph-representation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 50px 0;
+}
+.carbon-steel .graph-representation h5{
+    font-family: ProximaNova;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.1px;
+    color: #7c7977;
+    text-transform: uppercase;
+    margin-right: 30px;
+}
+.carbon-steel .graph-representation h5 img{
+    margin-right: 30px;
+}
+.what-is {
+    padding: 0;
+}
+/*.what-is .flex {*/
+    /**/
+    /**/
+/*}*/
+.what-is .green-block {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 60px 0;
+    background-image: linear-gradient(204deg, #b4ec51, #129e4a);
+}
+.what-is .blue-block {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 60px 0;
+    background-image: linear-gradient(226deg, #2d6bf0, #24499a);
+}
+.what-is  .section-heading {
+    font-family: "Fjalla One";
+    font-size: 26px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.what-is .section-details {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #ffffff;
+}
+.what-is .download-link {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.7px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.what-is .slick-slide img {
+    width: 100%;
+    height: 177px;
+}
+.what-is .powder-coating {
+    padding-top: 40px;
+}
+
+.what-is .powder-coating .caption{
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #ffffff;
+    padding: 20px 40px 0px 40px;
+}
+.what-is .bonded-epoxy {
+    padding-top: 19px;
+}
+.what-is .bonded-epoxy .caption{
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+    color: #ffffff;
+    padding: 20px 40px 0px 40px;
+}
+.sorry-section {
+    padding-top: 285px;
+    text-align: center;
+    padding-bottom: 134px;
+}
+.sorry-section .section-heading {
+    font-family: ProximaNova;
+    font-size: 100px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 10.3px;
+    color: #129e4a;
+    padding-bottom: 25px;
+}
+.sorry-section .section-subheading {
+    font-family: ProximaNova;
+    font-size: 27px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 4.1px;
+    color: #36413e;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+}
+.sorry-section .section-details {
+    font-family: ProximaNova;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    color: #36413e;
+}
+.sorry-section .custom-hr {
+    margin: 30px 0;
+}
+.sorry-section .btn-warning {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.7px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    border-radius: 6px;
+    background-color: #ffa400;
+}
+.privacy-section {
+    padding-top: 300px;
+    padding-bottom: 55px;
+}
+.privacy-section .section-heading {
+    font-family: ProximaNova;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    color: #129e4a;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+.privacy-section .section-details {
+    font-family: ProximaNova;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.87;
+    letter-spacing: normal;
+    color: #2d2e2e;
+}
+footer {
+    padding-top: 90px;
+    padding-bottom: 30px;
+    background-color: #1b4296;
+}
+footer .footer-heading {
+    font-family: ProximaNova;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2.2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+footer .text-muted {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.86;
+    letter-spacing: 0.7px;
+    color: #ffffff !important;
+}
+footer .text-muted a{
+    text-decoration: none;
+    color: #ffffff !important;
+
+}
+footer input, footer textarea {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    outline: none;
+    border-radius: 6px !important;
+    border: 2px solid #fff !important;
+}
+footer input.name {
+    background-image: url('/wp-content/themes/sage/assets/images/man-user.png');
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    text-indent: 25px;
+}
+footer input.phone {
+    background-image: url(../img/smartphone-call.png);
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    text-indent: 25px;
+}
+footer input.email {
+    background-image: url(../img/mail-black-envelope-symbol.png);
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    text-indent: 25px;
+}
+footer input.company {
+    background-image: url(../img/company.png);
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    text-indent: 25px;
+}
+footer textarea.message {
+    background-image: url(../img/comments.png);
+    background-repeat: no-repeat;
+    background-position: 4% 15%;
+    text-indent: 25px;
+}
+footer input::placeholder,  footer textarea::placeholder{
+    color: #fff !important;
+    opacity: 1 !important; /* Firefox */
+}
+footer button[type='submit'] {
+    font-family: ProximaNova;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.7px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+footer .submit {
+    text-align: right;
+}
+footer span.copyright {
+    font-size: 13px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', ProximaNova, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+footer ul.quicklinks {
+    font-size: 13px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+footer ul.quicklinks li a{
+    color: #ffffff;
+}
+footer .flex-end {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}
+@media (max-width: 1366px) and (min-width: 1024px) {
+    .nac-certified .img-container .img-1 {
+        left: 37%;
+    }
+    .quicklinks .quick-link-contain {
+        justify-content: space-between;
+    }
+    .quicklinks .quick-link-contain span {
+        padding-left: 15px;
+    }
+    .quicklinks .quick-link-contain img{
+        padding-right: 15px;
+    }
+    footer span.copyright {
+        /*padding-left: 25px;*/
+    }
+    footer ul.quicklinks {
+        margin-bottom: 0;
+    }
+    footer .img-container img {
+        max-width: 160px;
+    }
+    /*#tab-button li a {*/
+        /*font-size: 10px;*/
+    /*}*/
+    .tab-contents {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .tab-contents .executive h5 {
+        margin-top: 0;
+    }
+    .carbon-steel .graph-2 {
+        padding: 24px;
+    }
+    .carbon-steel h4.custom-padding {
+        padding: 0;
+    }
+    .what-is .section-heading {
+        font-size: 22px;
+    }
+    footer.fixed-bottom {
+        position: fixed;
+        width: 100%;
+    }
+}
+@media (max-width: 2100px) and (min-width: 1900px) {
+    .what-is .powder-coating {
+        padding-top: 19px;
+    }
+}
+@media (max-width: 1440px) and (min-width: 1400px) {
+    .what-is .powder-coating {
+        padding-top: 19px;
+    }
+}
+@media (max-width: 1366px) and (min-width: 1200px) {
+    .what-is .powder-coating {
+        padding-top: 40px;
+    }
+}
+@media (max-width: 1200px) and (min-width: 1024px) {
+    #mainNav .navbar-nav .nav-item .nav-link {
+        padding: 1.1em 12px;
+        font-size: 14px;
+    }
+    #tab-button li a {
+    font-size: 10px;
+    }
+
+}
+@media (max-width: 1023px) and (min-width: 992px) {
+    #mainNav .navbar-nav .nav-item .nav-link {
+        padding: 1.1em 15px;
+        font-size: 12px;
+    }
+    #tab-button li a {
+    font-size: 10px;
+    }
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+    header.masthead {
+        width: 100% !important;
+        background-size: 100% 100% !important;
+    }
+    .nace-institute .text-muted {
+        padding-top: 40px;
+        text-align: justify;
+    }
+    footer span.copyright {
+        /*padding-left: 0;*/
+    }
+    footer .img-container img {
+        max-width: 120px;
+    }
+    .quicklinks .quick-link-contain {
+        justify-content: space-between;
+    }
+    .quicklinks .quick-link-contain span {
+        padding-left: 15px;
+    }
+    .quicklinks .quick-link-contain img{
+        padding-right: 15px;
+    }
+    .nac-certified .img-container .img-1 {
+        left: 30%;
+    }
+    .services .customer-service {
+        padding: 0;
+    }
+    .tab-contents {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .tab-contents .executive .img-container {
+        height: 170px;
+    }
+    .tab-contents .executive h5 {
+        margin-top: 0;
+    }
+    .north-basin .img-container {
+        height: 120px;
+    }
+    footer ul.quicklinks {
+        margin-bottom: 0;
+    }
+    .carbon-steel .graph-2 {
+        padding: 0;
+    }
+    .carbon-steel h4.custom-padding {
+        padding: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    #tab-button li a {
+        font-size: 7.13px;
+    }
+    .what-is .powder-coating .caption {
+        padding: 20px 10px 0px 10px;
+    }
+    .what-is .blue-block .caption {
+        padding: 20px 10px 0px 10px;
+    }
+    footer .flex-end {
+        margin-right: 5px;
+    }
+    .carbon-steel .padding-zero-sm {
+        padding: 0;
+    }
+    footer span.copyright {
+        font-size: 11px;
+    }
+    footer input.company {
+        text-indent: 15px;
+        font-size: 0.7rem;
+    }
+    footer ul.quicklinks {
+        font-size: 11px;
+    }
+    .perfect-end {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 767px) {
+    header.masthead .intro-text .intro-lead-in {
+        font-style: normal;
+    }
+    .services .customer-service {
+        padding: 0;
+    }
+    .services .customer-service .service-heading {
+        padding-top: 50px;
+    }
+    .serving-section .section-heading {
+        padding-top: 20px;
+    }
+    .serving-section .flex-end {
+        padding-bottom: 0;
+    }
+    .tab-contents {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .tab-contents .executive h5 {
+        margin-top: 15px;
+    }
+    .what-is .powder-coating {
+        margin: 40px;
+        height: 400px;
+    }
+    .what-is .powder-coating .slick-prev{
+        display: none !important;
+    }
+    .what-is .powder-coating .slick-next{
+        display: none !important;
+    }
+    .what-is .bonded-epoxy {
+        margin: 40px;
+    }
+    .what-is .bonded-epoxy .slick-prev{
+        display: none !important;
+    }
+    .what-is .bonded-epoxy .slick-next{
+        display: none !important;
+    }
+    .quicklinks .quick-link-contain {
+        justify-content: space-between;
+    }
+    .quicklinks .quick-link-contain span {
+        padding-left: 15px;
+    }
+    .quicklinks .quick-link-contain img{
+        padding-right: 15px;
+    }
+    .nac-certified .img-container {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 150px;
+        margin-top: 30px;
+    }
+    .nac-certified .img-container .img-1 {
+        left: 33%;
+    }
+    .nace-institute .text-muted {
+        padding-top: 20px;
+    }
+    .superior-coating .multiple-logos img:last-child {
+        padding-top: 13px;
+    }
+    .superior-coating .multiple-logos img {
+        width: 135px;
+        padding-left: 10px;
+    }
+    header.sub-masthead {
+        width: 100%;
+        background-size: 100% 100% !important;
+        margin-top: 117px !important;
+        height: 175px !important;
+    }
+    .coater-section .row-heading {
+        padding-top: 20px;
+    }
+    .carbon-steel .graph-representation {
+        justify-content: normal;
+    }
+    footer .copyright {
+        text-align: center;
+    }
+    footer span.copyright {
+        /*padding: 0;*/
+    }
+    .perfect-end {
+        justify-content: center;
+    }
+    header.masthead .intro-text .intro-lead-in {
+        font-size: 20px;
+    }
+    .north-basin .img-heading h4 a {
+        font-size: 1.3rem;
+    }
+    .serving-section .section-heading {
+        font-size: 27px;
+    }
+    .custom-height-mobile {
+        height: 480px !important;
+    }
+}
+@media (max-width: 960px) and (min-width: 600px){
+    .nac-certified .img-container .img-1 {
+        left: 40%;
+    }
+    .save-money .main-heading {
+        font-size: 22px;
+    }
+}
+/*css for internet Explorer*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .nac-certified .img-container .img-1 {
+        left: 69%;
+    }
+    .services .customer-service {
+        padding-left: 60px;
+        padding-right: 60px;
+        display: block;
+        position: relative;
+
+    }
+    .services .block {
+        margin: auto;
+        top: 50%;
+        position: relative;
+        transform: translateY(-50%);
+    }
+    .carbon-steel .graph-2 {
+        padding-top: 28px;
+    }
+}
+/*css for safari all versions*/
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+{ @media {
+    #mainNav .navbar-nav .nav-item .nav-link {
+        padding: 1.1em 24px !important;
+        font-size: 14px !important;
+    }
+    #tab-button li a {
+        font-size: 7.13px;
+    }
+}}
+@supports (overflow:-webkit-marquee) and (justify-content:inherit)
+{
+
+
+}
+@media not all and (min-resolution:.001dpcm) {
+    @media {
+        #mainNav .navbar-nav .nav-item .nav-link {
+            padding: 1.1em 24px !important;
+            font-size: 14px !important;
+        }
+        #tab-button li a {
+            font-size: 12px;
+        }
+    }
+}
+@media (max-width: 1200px) and (min-width: 992px) {
+    @media not all and (min-resolution: .001dpcm) {
+        @media {
+            #mainNav .navbar-nav .nav-item .nav-link {
+                padding: 1.1em 16px !important;
+                font-size: 12px !important;
+            }
+
+            #tab-button li a {
+                font-size: 10px;
+            }
+
+        }
+
+    }
+}
+@media (max-width: 991px){
+    @media not all and (min-resolution: .001dpcm) {
+        @media {
+            #mainNav .navbar-nav .nav-item .nav-link {
+                padding: 1.1em 16px !important;
+                font-size: 12px !important;
+            }
+
+            #tab-button li a {
+                font-size: 7px;
+                padding: 6px 10px;
+            }
+
+        }
+
+    }
+}
