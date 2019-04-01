@@ -68,7 +68,7 @@
 </nav>
 
 <!-- Header -->
-<header class="about sub-masthead">
+<header class="about sub-masthead" style="background-image: url(<?php the_field('about_-_bg_image'); ?>);">
 
 </header>
 
@@ -77,14 +77,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h1 class="section-heading">Superior Powder Coating</h1>
-                <p class="section-details">North Basin Coating, Inc. began in 1982 as a three person operation and has since experienced several periods of growth. What began as a pipe, valve, and fitting coating company catering mostly to the oil industry has diversified into a multifaceted powder coating operation.<br><br>
-
-                        We were the first company in West Texas to offer electrostatic powder application. Our first application for powder coating was to the exterior of the pipe that we were coating internally. We have seen the advantages and many uses for powder coating and have expanded our applications to include the agriculture, industrial, and construction markets.<br><br>
-
-                        Today, North Basin Coating, Inc. is one of the largest, cleanest, and most modern powder coating facilities in the United States. We have two facilities; one in Levelland, TX, which includes 37,500 square feet under roof on 15 acres with an indoor blasting facility. Our other location is in Odessa, TX, and consists of 7,500 square feet under roof on 3 acres. We can coat a wide range of items from small parts to those up to 42' long and weighing 5,000 pounds.<br><br>
-
-                        What separates us from the competition are our high standards of customer service, our state-of-the-art process and extraordinary levels of quality control. We have two NACE Certified Coating Inspectors on staff, and are a member of the Powder Coating Institute. We are extremely rigorous, and our detailed inspection protocol ensures we deliver the highest quality product. With our coating's exceptional levels of durability and dependability, we'll save you time and money.</p>
+                <h1 class="section-heading"><?php the_field('services_-_title'); ?></h1>
+                <p class="section-details"><?php the_field('services_-_paragraph'); ?></p>
             </div>
             <div class="col-md-5">
                 <img src="/wp-content/themes/sage/assets/images/img-3404.png" class="img-fluid width-100" />
