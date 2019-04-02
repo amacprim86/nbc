@@ -266,9 +266,39 @@
                       <?php endif; ?>
 
                     </div>
-                    <div id="tab04" class="tab-contents">
+                    <div id="tab04" class="tab-contents scroll">
                         <h2>Accounting / Admin</h2>
-                        <p></p>
+                        <?php
+                      // check if the repeater field has rows of data
+                      if( have_rows('tabs_-_aa', 10) ):
+
+                      // loop through the rows of data
+                      while ( have_rows('tabs_-_aa', 10) ) : the_row();
+
+                      // vars
+                      $image = get_sub_field('image', 10);
+                      $name = get_sub_field('name', 10);
+                      $pos = get_sub_field('pos', 10);
+                      $para = get_sub_field('para', 10);
+                      $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                      ?>
+
+
+                        <div class="row executive">
+                                <div class="col-md-4">
+                                    <div class="img-container" style="background-image: url(<?php echo $image; ?>);">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5><?php echo $name; ?></h5>
+                                    <h6><?php echo $pos; ?></h6>
+                                    <p><?php echo $para; ?></p>
+                                </div>
+                        </div>
+
+                      <?php endwhile; ?>
+                      <?php endif; ?>
                     </div>
 
                 </div>
@@ -285,7 +315,7 @@
             </div>
             <div class="col-md-5 flex-end">
                 <div class="section-details">
-                    <h2 class="section-heading">Serving the nation</h2>
+                    <h2 class="section-heading"><?php the_field('serving_nation_-_title'); ?></h2>
                     <h5 class="section-subheading">Selected Delivery in Texas and New Mexico</h5>
                     <div class="graph-representation">
                         <h5><span class="blue"></span> States Served to Date</h5>
