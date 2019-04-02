@@ -81,25 +81,31 @@
                 <p class="section-details"><?php the_field('services_-_paragraph'); ?></p>
             </div>
             <div class="col-md-5">
-                <img src="/wp-content/themes/sage/assets/images/img-3404.png" class="img-fluid width-100" />
+                <img src="<?php the_field('services_-_image_main'); ?>" class="img-fluid width-100" />
                 <div class="multiple-logos">
-                    <img src="/wp-content/themes/sage/assets/images/nac.png" alt="Superior Powder Coating"/>
-                    <img src="/wp-content/themes/sage/assets/images/pci.png" alt="Superior Powder Coating"/>
+                    <img src="<?php the_field('services_-_image_sub1'); ?>" alt="Superior Powder Coating"/>
+                    <img src="<?php the_field('services_-_image_sub2'); ?>" alt="Superior Powder Coating"/>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--Nace institute center-->
-<section class="make-it-happen">
+<section class="make-it-happen" style="background-image: url(<?php the_field('form_section_-_bg'); ?>);">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h3 class="section-heading">LET'S MAKE IT HAPPEN</h3>
-                <p class="section-details">You are welcome to contact us about any of our services. We welcome all of your comments and suggestions. Please enter your contact information, and one of our team members will get back with you as soon as possible.</p>
+                <h3 class="section-heading"><?php the_field('form_section_-_title'); ?></h3>
+                <p class="section-details"><?php the_field('form_section_-_paragraph'); ?></p>
             </div>
             <div class="col-md-7">
                 <form>
+                    <div class="row">
+                      <?php the_field('form'); ?>
+                    </div>
+                </form>
+
+<!--                <form>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -125,6 +131,8 @@
                         </div>
                     </div>
                 </form>
+-->
+
             </div>
 
         </div>
@@ -155,62 +163,108 @@
 
                     <div id="tab01" class="tab-contents scroll">
                         <h2>Executive Management Team</h2>
+
+                        <?php
+                      // check if the repeater field has rows of data
+                      if( have_rows('tabs_-_emt', 10) ):
+
+                      // loop through the rows of data
+                      while ( have_rows('tabs_-_emt', 10) ) : the_row();
+
+                      // vars
+                      $image = get_sub_field('image', 10);
+                      $name = get_sub_field('name', 10);
+                      $pos = get_sub_field('pos', 10);
+                      $para = get_sub_field('para', 10);
+                      $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                      ?>
+
+
                         <div class="row executive">
                                 <div class="col-md-4">
-                                    <div class="img-container">
+                                    <div class="img-container" style="background-image: url(<?php echo $image; ?>);">
 
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h5>Andrew Bushong</h5>
-                                    <h6>VP of Operations</h6>
-                                    <p>Bringing with him a 10+ year background in oilfield sales, Andy joined North Basin in 2005 as a salesman. Andy then moved to the operations side of the business. He was promoted to Plant Manager of North Basin’s Odessa facility in 2006. After obtaining his NACE Level II certification, he became Regional Manager over both company facilities in 2010. Andy is currently VP of Operations with responsibility over all the operational and sales functions within North Basin.</p>
+                                    <h5><?php echo $name; ?></h5>
+                                    <h6><?php echo $pos; ?></h6>
+                                    <p><?php echo $para; ?></p>
                                 </div>
-                            </div>
-                        <div class="row executive">
-                                <div class="col-md-4">
-                                    <div class="img-container">
+                        </div>
 
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>Ken Harding</h5>
-                                    <h6>CFO / VP of Finance</h6>
-                                    <p>Born and raised in Lubbock, Ken recently returned to West Texas and has joined the North Basin Coating team after spending 25+ years as CFO of a privately held E&P company in East Texas. Ken has responsibility over the accounting, administration, and IT functions within the company. Prior to that, he held positions at Deloitte and Touche and a UK E&P company – both in Dallas. A CPA, Ken received his BBA from Texas Tech and his MBA from The University of Texas at Tyler.</p>
-                                </div>
-                            </div>
-                        <div class="row executive">
-                                <div class="col-md-4">
-                                    <div class="img-container">
+                      <?php endwhile; ?>
+                      <?php endif; ?>
 
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>John Doe</h5>
-                                    <h6>Marketing Manager</h6>
-                                    <p>Bringing with him a 10+ year background in oilfield sales, Andy joined North Basin in 2005 as a salesman. Andy then moved to the operations side of the business. He was promoted to Plant Manager of North Basin’s Odessa facility in 2006. After obtaining his NACE Level II certification, he became Regional Manager over both company facilities in 2010. Andy is currently VP of Operations with responsibility over all the operational and sales functions within North Basin.</p>
-                                </div>
-                            </div>
-                        <div class="row executive">
-                                <div class="col-md-4">
-                                    <div class="img-container">
-
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>Smith John</h5>
-                                    <h6>Executive Manager</h6>
-                                    <p>Bringing with him a 10+ year background in oilfield sales, Andy joined North Basin in 2005 as a salesman. Andy then moved to the operations side of the business. He was promoted to Plant Manager of North Basin’s Odessa facility in 2006. After obtaining his NACE Level II certification, he became Regional Manager over both company facilities in 2010. Andy is currently VP of Operations with responsibility over all the operational and sales functions within North Basin.</p>
-                                </div>
-                            </div>
                     </div>
-                    <div id="tab02" class="tab-contents">
+                    <div id="tab02" class="tab-contents scroll">
                         <h2>Sales</h2>
-                        <p></p>
+                        <?php
+                      // check if the repeater field has rows of data
+                      if( have_rows('tabs_-_s', 10) ):
+
+                      // loop through the rows of data
+                      while ( have_rows('tabs_-_s', 10) ) : the_row();
+
+                      // vars
+                      $image = get_sub_field('image', 10);
+                      $name = get_sub_field('name', 10);
+                      $pos = get_sub_field('pos', 10);
+                      $para = get_sub_field('para', 10);
+                      $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                      ?>
+
+
+                        <div class="row executive">
+                                <div class="col-md-4">
+                                    <div class="img-container" style="background-image: url(<?php echo $image; ?>);">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5><?php echo $name; ?></h5>
+                                    <h6><?php echo $pos; ?></h6>
+                                    <p><?php echo $para; ?></p>
+                                </div>
+                        </div>
+
+                      <?php endwhile; ?>
+                      <?php endif; ?>
                     </div>
-                    <div id="tab03" class="tab-contents">
+                    <div id="tab03" class="tab-contents scroll">
                         <h2>Plant managers & shop foremen</h2>
-                        <p></p>
+                        <?php
+                      // check if the repeater field has rows of data
+                      if( have_rows('tabs_-_pm', 10) ):
+
+                      // loop through the rows of data
+                      while ( have_rows('tabs_-_pm', 10) ) : the_row();
+
+                      // vars
+                      $image = get_sub_field('image', 10);
+                      $name = get_sub_field('name', 10);
+                      $pos = get_sub_field('pos', 10);
+                      $para = get_sub_field('para', 10);
+                      $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                      ?>
+
+
+                        <div class="row executive">
+                                <div class="col-md-4">
+                                    <div class="img-container" style="background-image: url(<?php echo $image; ?>);">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5><?php echo $name; ?></h5>
+                                    <h6><?php echo $pos; ?></h6>
+                                    <p><?php echo $para; ?></p>
+                                </div>
+                        </div>
+
+                      <?php endwhile; ?>
+                      <?php endif; ?>
+
                     </div>
                     <div id="tab04" class="tab-contents">
                         <h2>Accounting / Admin</h2>
