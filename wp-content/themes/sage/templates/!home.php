@@ -214,6 +214,8 @@
 
 
 <?php get_template_part('footer'); ?>
+
+
   <!-- Bootstrap core JavaScript -->
   <script src="/wp-content/themes/sage/assets/scripts/jquery/jquery.min.js"></script>
   <script src="/wp-content/themes/sage/assets/bootstrap/js/bootstrap.bundle.min.js"></script>

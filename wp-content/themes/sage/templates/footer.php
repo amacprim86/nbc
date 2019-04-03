@@ -21,7 +21,7 @@
               <h4 class="footer-heading"><?php the_field('form_-_title', 381); ?></h4>
                 <form>
                     <div class="row">
-                      <?php the_field('form'); ?>
+                      <?php the_field('form', 381); ?>
                     </div>
                 </form>
 
@@ -67,7 +67,7 @@
           <div class="col-md-5 col-sm-12 perfect-end">
               <ul class="list-inline quicklinks">
                   <li class="list-inline-item">
-                      <a href="privacy_policy.html">Privacy Policy</a>
+                      <a href="/privacy-policy">Privacy Policy</a>
                   </li>
                   <li class="list-inline-item">
                       <a href="#">|</a>
