@@ -62,7 +62,7 @@
                     <a class="nav-link" href="/advantage">The North Basin Advantage</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">contact</a>
+                    <a class="nav-link" href="/contact">contact</a>
                 </li>
             </ul>
         </div>
@@ -331,88 +331,26 @@
 
 
     <div class="autoplay flick" style="">
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider1.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider2.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider3.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider4.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider5.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider4.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider1.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider2.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider3.png" alt="Serving the nation"/></div>
-        <div class="az"><img src="/wp-content/themes/sage/assets/images/slider5.png" alt="Serving the nation"/></div>
+
+      <?php
+      // check if the repeater field has rows of data
+      if( have_rows('slider', 10) ):
+
+      // loop through the rows of data
+      while ( have_rows('slider', 10) ) : the_row();
+
+      // vars
+      $image = get_sub_field('images', 10);
+      $size = 'full'; // (thumbnail, medium, large, full or custom size)
+      ?>
+
+
+        <div class="az"><img src="<?php echo $image; ?>" alt="Serving the nation"/></div>
+      <?php endwhile; ?>
+      <?php endif; ?>
     </div>
 
-    <script>
-    var flky = new Flickity( '.flick', {
-      // options, defaults listed
 
-      accessibility: true,
-      // enable keyboard navigation, pressing left & right keys
-
-      autoPlay: 3000,
-      // advances to the next cell
-      // if true, default is 3 seconds
-      // or set time between advances in milliseconds
-      // i.e. `autoPlay: 1000` will advance every 1 second
-
-      cellAlign: 'center',
-      // alignment of cells, 'center', 'left', or 'right'
-      // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
-
-      cellSelector: undefined,
-      // specify selector for cell elements
-
-      contain: false,
-      // will contain cells to container
-      // so no excess scroll at beginning or end
-      // has no effect if wrapAround is enabled
-
-      draggable: true,
-      // enables dragging & flicking
-
-      freeScroll: false,
-      // enables content to be freely scrolled and flicked
-      // without aligning cells
-
-      friction: 0.2,
-      // smaller number = easier to flick farther
-
-      initialIndex: 0,
-      // zero-based index of the initial selected cell
-
-      percentPosition: true,
-      // sets positioning in percent values, rather than pixels
-      // Enable if items have percent widths
-      // Disable if items have pixel widths, like images
-
-      prevNextButtons: true,
-      // creates and enables buttons to click to previous & next cells
-
-      pageDots: true,
-      // create and enable page dots
-
-      resize: true,
-      // listens to window resize events to adjust size & positions
-
-      rightToLeft: false,
-      // enables right-to-left layout
-
-      setGallerySize: true,
-      // sets the height of gallery
-      // disable if gallery already has height set with CSS
-
-      watchCSS: false,
-      // watches the content of :after of the element
-      // activates if #element:after { content: 'flickity' }
-      // IE8 and Android 2.3 do not support watching :after
-      // set watch: 'fallbackOn' to enable for these browsers
-
-      wrapAround: true
-      // at end of cells, wraps-around to first for infinite scrolling
-
-    });
-    </script>
 
 <!-- Modal 1 -->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -449,8 +387,9 @@
 <!-- Bootstrap core JavaScript -->
 
 <script src="/wp-content/themes/sage/assets/scripts/jquery/jquery.min.js"></script>
-<script src="wp-content/themes/sage/assets/flickity/flickity.pkgd.js"></script>
+
 <script type="text/javascript" src="/wp-content/themes/sage/assets/scripts/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script src="/wp-content/themes/sage/assets/flickity/flickity.pkgd.js"></script>
 <script src="/wp-content/themes/sage/assets/scripts/bootstrap/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
@@ -462,6 +401,78 @@
 <!-- Custom scripts for this template -->
 <script src="/wp-content/themes/sage/assets/scripts/js/agency.js"></script>
 
+
+<script>
+console.log("temp");
+var flky = new Flickity( '.flick', {
+  // options, defaults listed
+
+  accessibility: true,
+  // enable keyboard navigation, pressing left & right keys
+
+  autoPlay: 3000,
+  // advances to the next cell
+  // if true, default is 3 seconds
+  // or set time between advances in milliseconds
+  // i.e. `autoPlay: 1000` will advance every 1 second
+
+  cellAlign: 'center',
+  // alignment of cells, 'center', 'left', or 'right'
+  // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
+
+  cellSelector: undefined,
+  // specify selector for cell elements
+
+  contain: false,
+  // will contain cells to container
+  // so no excess scroll at beginning or end
+  // has no effect if wrapAround is enabled
+
+  draggable: true,
+  // enables dragging & flicking
+
+  freeScroll: false,
+  // enables content to be freely scrolled and flicked
+  // without aligning cells
+
+  friction: 0.2,
+  // smaller number = easier to flick farther
+
+  initialIndex: 0,
+  // zero-based index of the initial selected cell
+
+  percentPosition: true,
+  // sets positioning in percent values, rather than pixels
+  // Enable if items have percent widths
+  // Disable if items have pixel widths, like images
+
+  prevNextButtons: true,
+  // creates and enables buttons to click to previous & next cells
+
+  pageDots: false,
+  // create and enable page dots
+
+  resize: true,
+  // listens to window resize events to adjust size & positions
+
+  rightToLeft: false,
+  // enables right-to-left layout
+
+  setGallerySize: true,
+  // sets the height of gallery
+  // disable if gallery already has height set with CSS
+
+  watchCSS: false,
+  // watches the content of :after of the element
+  // activates if #element:after { content: 'flickity' }
+  // IE8 and Android 2.3 do not support watching :after
+  // set watch: 'fallbackOn' to enable for these browsers
+
+  wrapAround: true
+  // at end of cells, wraps-around to first for infinite scrolling
+
+});
+</script>
 
 
 

@@ -29,6 +29,8 @@
     <link href="/wp-content/themes/sage/assets/styles/agency.css" rel="stylesheet">
     <!-- WP OVERRIDE STYLES (AMAC) -->
     <link href="/wp-content/themes/sage/assets/styles/wpover.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
+    <!-- FLICKITY -->
+    <link rel="stylesheet" href="/wp-content/themes/sage/assets/flickity/flickity.css" media="screen">
 </head>
 
 <body id="page-top">
@@ -125,22 +127,29 @@
                 </div>
                 <div class="row margin-zero">
                     <div class="col-md-12 padding-zero">
-                        <div class="powder-coating">
-                            <div><img src="/wp-content/themes/sage/assets/images/slider1.png" alt="Surfaces are blast cleaned or chemically pre-treated"/>
+                        <div class="powder-coating flick1"> <!-- START HERE -->
+                          <?php
+                          // check if the repeater field has rows of data
+                          if( have_rows('pc', 15) ):
+
+                          // loop through the rows of data
+                          while ( have_rows('pc', 15) ) : the_row();
+
+                          // vars
+                          $image = get_sub_field('images', 15);
+                          $cap = get_sub_field('caption', 15);
+                          $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                          ?>
+
+                            <div class="pow" style="background-image: url('<?php echo $image; ?>')">
                                 <div class="caption">
-                                    <p>Surfaces are blast cleaned or chemically pre-treated.</p>
+                                    <p><?php echo $cap; ?></p>
                                 </div>
                             </div>
-                            <div><img src="/wp-content/themes/sage/assets/images/slider2.png" alt="XTRA SHIELD™ coating is electrostatically applied."/>
-                                <div class="caption">
-                                    <p>XTRA SHIELD™ coating is electrostatically applied.</p>
-                                </div>
-                            </div>
-                            <div><img src="/wp-content/themes/sage/assets/images/slider3.png" alt="XTRA SHIELD™ is cured at 400 degrees Fahrenheit."/>
-                                <div class="caption">
-                                    <p>XTRA SHIELD™ is cured at 400 degrees Fahrenheit.</p>
-                                </div>
-                            </div>
+
+                          <?php endwhile; ?>
+                          <?php endif; ?>
+
                         </div>
                     </div>
                 </div>
@@ -162,22 +171,31 @@
                     </div>
                     <div class="row margin-zero">
                         <div class="col-md-12 padding-zero custom-height-mobile">
-                            <div class="bonded-epoxy">
-                                <div><img src="/wp-content/themes/sage/assets/images/slider1.png" alt="Pipes are prepared with internal grinding and blast cleaning."/>
+                            <div class="bonded-epoxy flick2"> <!-- START HERE -->
+
+                              <?php
+                              // check if the repeater field has rows of data
+                              if( have_rows('fbe', 15) ):
+
+                              // loop through the rows of data
+                              while ( have_rows('fbe', 15) ) : the_row();
+
+                              // vars
+                              $image = get_sub_field('images', 15);
+                              $cap = get_sub_field('caption', 15);
+                              $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                              ?>
+
+
+                                <div class="fus" style="background-image: url('<?php echo $image; ?>')">
                                     <div class="caption">
-                                        <p>Pipes are prepared with internal grinding and blast cleaning.</p>
+                                        <p><?php echo $cap; ?></p>
                                     </div>
                                 </div>
-                                <div><img src="/wp-content/themes/sage/assets/images/slider2.png" alt="Phenolic primer is applied, and the substrate is heated and coated."/>
-                                    <div class="caption">
-                                        <p>Phenolic primer is applied, and the substrate is heated and coated.</p>
-                                    </div>
-                                </div>
-                                <div><img src="/wp-content/themes/sage/assets/images/slider3.png" alt="Pipes are inspected, including holiday detection and thickness checks."/>
-                                    <div class="caption">
-                                        <p>Pipes are inspected, including holiday detection and thickness checks.</p>
-                                    </div>
-                                </div>
+                                
+                              <?php endwhile; ?>
+                              <?php endif; ?>
+
                             </div>
                         </div>
                     </div>
@@ -313,22 +331,30 @@
         </div>
     </div>
 </section>
-<div class="autoplay">
-    <div><img src="/wp-content/themes/sage/assets/images/slider1.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider2.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider3.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider4.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider5.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider4.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider1.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider2.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider3.png" alt="Serving the nation"/> </div>
-    <div><img src="/wp-content/themes/sage/assets/images/slider5.png" alt="Serving the nation"/> </div>
+<div class="autoplay flick">
+    <?php
+    // check if the repeater field has rows of data
+    if( have_rows('slider_bottom', 15) ):
+
+    // loop through the rows of data
+    while ( have_rows('slider_bottom', 15) ) : the_row();
+
+    // vars
+    $image = get_sub_field('images', 15);
+    $size = 'full'; // (thumbnail, medium, large, full or custom size)
+    ?>
+
+    <div><img src="<?php echo $image; ?>" alt="Serving the nation"/> </div>
+    <?php endwhile; ?>
+    <?php endif; ?>
+
+
 </div>
 <!-- Footer -->
 <?php get_template_part('footer'); ?>
 <!-- Bootstrap core JavaScript -->
 <script src="/wp-content/themes/sage/assets/scripts/jquery/jquery.min.js"></script>
+<script src="/wp-content/themes/sage/assets/flickity/flickity.pkgd.js"></script>
 <script src="/wp-content/themes/sage/assets/scripts/bootstrap/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
@@ -340,123 +366,226 @@
 <script type="/wp-content/themes/sage/assets/slick/slick.min.js"></script>
 <!-- Custom scripts for this template -->
 <script src="/wp-content/themes/sage/assets/scripts/js/agency.js"></script>
-<script>
-    $(document).ready(function(){
-        $('.autoplay').slick({
-            slidesToShow: 5,
-            slidesToScroll: 5,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            dots: false,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        dots: false
-                    }
-                }
-            ]
-        });
-    });
 
-</script>
-<script>
-    $(document).ready(function(){
-        $('.powder-coating').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            dots: false,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        dots: false
-                    }
-                }
-            ]
-        });
-    });
 
-</script>
-<script>
-    $(document).ready(function(){
-        $('.bonded-epoxy').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            dots: false,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        dots: false
-                    }
-                }
-            ]
-        });
-    });
 
+<script>
+console.log("temp");
+var flky = new Flickity( '.flick', {
+  // options, defaults listed
+
+  accessibility: true,
+  // enable keyboard navigation, pressing left & right keys
+
+  autoPlay: 3000,
+  // advances to the next cell
+  // if true, default is 3 seconds
+  // or set time between advances in milliseconds
+  // i.e. `autoPlay: 1000` will advance every 1 second
+
+  cellAlign: 'center',
+  // alignment of cells, 'center', 'left', or 'right'
+  // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
+
+  cellSelector: undefined,
+  // specify selector for cell elements
+
+  contain: false,
+  // will contain cells to container
+  // so no excess scroll at beginning or end
+  // has no effect if wrapAround is enabled
+
+  draggable: true,
+  // enables dragging & flicking
+
+  freeScroll: false,
+  // enables content to be freely scrolled and flicked
+  // without aligning cells
+
+  friction: 0.2,
+  // smaller number = easier to flick farther
+
+  initialIndex: 0,
+  // zero-based index of the initial selected cell
+
+  percentPosition: true,
+  // sets positioning in percent values, rather than pixels
+  // Enable if items have percent widths
+  // Disable if items have pixel widths, like images
+
+  prevNextButtons: true,
+  // creates and enables buttons to click to previous & next cells
+
+  pageDots: true,
+  // create and enable page dots
+
+  resize: true,
+  // listens to window resize events to adjust size & positions
+
+  rightToLeft: false,
+  // enables right-to-left layout
+
+  setGallerySize: true,
+  // sets the height of gallery
+  // disable if gallery already has height set with CSS
+
+  watchCSS: false,
+  // watches the content of :after of the element
+  // activates if #element:after { content: 'flickity' }
+  // IE8 and Android 2.3 do not support watching :after
+  // set watch: 'fallbackOn' to enable for these browsers
+
+  wrapAround: true
+  // at end of cells, wraps-around to first for infinite scrolling
+
+});
 </script>
+
+<script>
+console.log("temp");
+var flky = new Flickity( '.flick1', {
+  // options, defaults listed
+
+  accessibility: true,
+  // enable keyboard navigation, pressing left & right keys
+
+  autoPlay: false,
+  // advances to the next cell
+  // if true, default is 3 seconds
+  // or set time between advances in milliseconds
+  // i.e. `autoPlay: 1000` will advance every 1 second
+
+  cellAlign: 'center',
+  // alignment of cells, 'center', 'left', or 'right'
+  // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
+
+  cellSelector: undefined,
+  // specify selector for cell elements
+
+  contain: false,
+  // will contain cells to container
+  // so no excess scroll at beginning or end
+  // has no effect if wrapAround is enabled
+
+  draggable: true,
+  // enables dragging & flicking
+
+  freeScroll: false,
+  // enables content to be freely scrolled and flicked
+  // without aligning cells
+
+  friction: 0.2,
+  // smaller number = easier to flick farther
+
+  initialIndex: 0,
+  // zero-based index of the initial selected cell
+
+  percentPosition: true,
+  // sets positioning in percent values, rather than pixels
+  // Enable if items have percent widths
+  // Disable if items have pixel widths, like images
+
+  prevNextButtons: false,
+  // creates and enables buttons to click to previous & next cells
+
+  pageDots: false,
+  // create and enable page dots
+
+  resize: true,
+  // listens to window resize events to adjust size & positions
+
+  rightToLeft: false,
+  // enables right-to-left layout
+
+  setGallerySize: true,
+  // sets the height of gallery
+  // disable if gallery already has height set with CSS
+
+  watchCSS: false,
+  // watches the content of :after of the element
+  // activates if #element:after { content: 'flickity' }
+  // IE8 and Android 2.3 do not support watching :after
+  // set watch: 'fallbackOn' to enable for these browsers
+
+  wrapAround: true
+  // at end of cells, wraps-around to first for infinite scrolling
+
+});
+</script>
+
+<script>
+console.log("temp");
+var flky = new Flickity( '.flick2', {
+  // options, defaults listed
+
+  accessibility: true,
+  // enable keyboard navigation, pressing left & right keys
+
+  autoPlay: false,
+  // advances to the next cell
+  // if true, default is 3 seconds
+  // or set time between advances in milliseconds
+  // i.e. `autoPlay: 1000` will advance every 1 second
+
+  cellAlign: 'center',
+  // alignment of cells, 'center', 'left', or 'right'
+  // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
+
+  cellSelector: undefined,
+  // specify selector for cell elements
+
+  contain: false,
+  // will contain cells to container
+  // so no excess scroll at beginning or end
+  // has no effect if wrapAround is enabled
+
+  draggable: true,
+  // enables dragging & flicking
+
+  freeScroll: false,
+  // enables content to be freely scrolled and flicked
+  // without aligning cells
+
+  friction: 0.2,
+  // smaller number = easier to flick farther
+
+  initialIndex: 0,
+  // zero-based index of the initial selected cell
+
+  percentPosition: true,
+  // sets positioning in percent values, rather than pixels
+  // Enable if items have percent widths
+  // Disable if items have pixel widths, like images
+
+  prevNextButtons: false,
+  // creates and enables buttons to click to previous & next cells
+
+  pageDots: false,
+  // create and enable page dots
+
+  resize: true,
+  // listens to window resize events to adjust size & positions
+
+  rightToLeft: false,
+  // enables right-to-left layout
+
+  setGallerySize: true,
+  // sets the height of gallery
+  // disable if gallery already has height set with CSS
+
+  watchCSS: false,
+  // watches the content of :after of the element
+  // activates if #element:after { content: 'flickity' }
+  // IE8 and Android 2.3 do not support watching :after
+  // set watch: 'fallbackOn' to enable for these browsers
+
+  wrapAround: true
+  // at end of cells, wraps-around to first for infinite scrolling
+
+});
+</script>
+
+
 </body>
 
 </html>
