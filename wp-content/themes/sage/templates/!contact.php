@@ -170,7 +170,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-7">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"><img src="<?php the_field('serving_the_nation_-_image'); ?>" alt="Serving the nation" class="img-fluid" /></a>
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"><img src="<?php the_field('serving_the_nation_-_image'); ?>" alt="Serving the nation" class="img-fluid usa" /></a>
             </div>
             <div class="col-md-5 flex-end">
                 <div class="section-details">

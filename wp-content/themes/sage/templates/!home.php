@@ -203,7 +203,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-            <img src="<?php the_field('nace_institute_-_image'); ?>" alt="NACE International is the world’s leading authority" class="img-fluid"/>
+            <img src="<?php the_field('nace_institute_-_image'); ?>" class="homei1"alt="NACE International is the world’s leading authority" class="img-fluid"/>
         </div>
         <div class="col-md-8 perfect-center">
             <p class="text-muted"><?php the_field('nace_institute_-_paragraph'); ?></p>

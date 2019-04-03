@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <h2 class="section-heading"><?php the_field('services_-_title'); ?></h2>
+                <h2 class="section-heading nue"><?php the_field('services_-_title'); ?></h2>
 
                 <?php
               // check if the repeater field has rows of data
@@ -141,7 +141,7 @@
                           $size = 'full'; // (thumbnail, medium, large, full or custom size)
                           ?>
 
-                            <div class="pow" style="background-image: url('<?php echo $image; ?>')">
+                            <div class="pow iheight" style="background-image: url('<?php echo $image; ?>')">
                                 <div class="caption">
                                     <p><?php echo $cap; ?></p>
                                 </div>
@@ -187,12 +187,12 @@
                               ?>
 
 
-                                <div class="fus" style="background-image: url('<?php echo $image; ?>')">
+                                <div class="fus iheight" style="background-image: url('<?php echo $image; ?>')">
                                     <div class="caption">
                                         <p><?php echo $cap; ?></p>
                                     </div>
                                 </div>
-                                
+
                               <?php endwhile; ?>
                               <?php endif; ?>
 
@@ -449,7 +449,7 @@ var flky = new Flickity( '.flick1', {
   accessibility: true,
   // enable keyboard navigation, pressing left & right keys
 
-  autoPlay: false,
+  autoPlay: 33000,
   // advances to the next cell
   // if true, default is 3 seconds
   // or set time between advances in milliseconds
@@ -521,7 +521,7 @@ var flky = new Flickity( '.flick2', {
   accessibility: true,
   // enable keyboard navigation, pressing left & right keys
 
-  autoPlay: false,
+  autoPlay: 33000,
   // advances to the next cell
   // if true, default is 3 seconds
   // or set time between advances in milliseconds

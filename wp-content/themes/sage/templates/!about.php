@@ -155,7 +155,7 @@
                         </ul>
                     </div>
                     <div class="tab-select-outer">
-                        <select id="tab-select">
+                        <select id="tab-select" class="ab-tb">
                             <option value="#tab01">Executive managment</option>
                             <option value="#tab02">Sales</option>
                             <option value="#tab03">Plant managers & shop foremen</option>
@@ -313,7 +313,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-7">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"><img src="<?php the_field('sn_-_map_image'); ?>" alt="Serving the nation" class="img-fluid" /></a>
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"><img src="<?php the_field('sn_-_map_image'); ?>" alt="Serving the nation" class="img-fluid usa" /></a>
             </div>
             <div class="col-md-5 flex-end">
                 <div class="section-details">

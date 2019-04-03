@@ -159,6 +159,11 @@ body #gform_wrapper_1 input#input_1_7, body #gform_wrapper_1 input#input_1_8, bo
 
 }
 
+/* Page - ADVANTAGE same height fix */
+.eh {
+  min-height: 250px;
+}
+
 /* FLICKITY SLIDER */
 
 .flick {
@@ -244,4 +249,149 @@ body #gform_wrapper_1 input#input_1_7, body #gform_wrapper_1 input#input_1_8, bo
   .fus.is-selected {
     width: 100%;
   }
+}
+
+/* PAGE ADVANTAGE - Powder Coating, Fusion Bounded IMGs */
+@media (max-width: 1100px) {
+.what-is .powder-coating, .what-is .bonded-epoxy {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+}
+
+.iheight {
+    background-size: contain;
+}
+
+/* MOBILE RESPONSIVE FIX */
+
+@media (max-width: 767px) {
+  /* ADVANTAGE PAGE */
+  .nue {
+    text-align: center !important;
+  }
+  .coater-section .row-heading {
+    text-align: center;
+  }
+  .coater-section .row-details {
+    text-align: center;
+  }
+
+  .what-is .section-details {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  .what-is .download-link {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .what-is .section-heading {
+    text-align: center;
+  }
+
+}
+@media (max-width: 640px) {
+  /* ADVANTAGE PAGE */
+
+  .make-it-happen .section-heading {
+    text-align: center;
+  }
+  .make-it-happen .section-details {
+    text-align: center;
+  }
+}
+@media (max-width: 450px) {
+  /* HOME PAGE */
+  header.masthead .intro-text .intro-heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  header.masthead .intro-text .intro-lead-in {
+    font-size: 18px;
+    line-height: 26px;
+    max-width: 90%;
+    margin: auto;
+  }
+  .nace-institute .text-muted {
+    text-align: center;
+  }
+  .homei1 {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  /* ABOUT PAGE */
+  .ab-tb {
+    border-color: #000;
+    display: block;
+    margin: auto;
+  }
+  .usa {
+    height: 200px !important;
+    width: auto;
+  }
+  /* CONTACT PAGE */
+  .north-basin .img-container {
+    margin-bottom: 20px;
+  }
+  /* ADVANTAGE PAGE */
+  .container {
+    max-width: 100%;
+    padding-left: unset;
+    padding-right: unset;
+  }
+  .row {
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .perfect-center {
+    flex-direction: column;
+  }
+  .carbon-steel .section-heading, .carbon-steel .section-subheading {
+    text-align: center;
+  }
+  .carbon-steel .graph-representation {
+    justify-content: center;
+  }
+  .carbon-steel .section-details {
+    text-align: center;
+  }
+  .img-fluid {
+    display: block;
+    margin: auto;
+  }
+  /* ADVANTAGE PAGE, GF Fields */
+  body #gform_wrapper_1 input#input_1_7, body #gform_wrapper_1 input#input_1_8, body #gform_wrapper_1 input#input_1_4, body #gform_wrapper_1 #gform_fields_1 #field_1_6 textarea, body #gform_wrapper_1 input#input_1_5 {
+    width: 300px;
+    display: block;
+    margin: auto;
+    margin-top: 12px;
+  }
+  #gform_fields_1 #field_1_8 {
+    padding-right: unset;
+  }
+  #gform_fields_1 {
+    padding-left: unset;
+  }
+
+  /* FOOTER SECTION */
+  footer .footer-heading {
+    text-align: center;
+    padding-top: 20px;
+  }
+  footer .text-muted {
+    text-align: center;
+  }
+  footer ul.quicklinks {
+    text-align: center !important;
+    line-height: 22px;
+  }
+
+
+
 }
