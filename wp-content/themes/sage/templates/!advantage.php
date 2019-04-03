@@ -61,7 +61,7 @@
 </nav>
 
 <!-- Header -->
-<header class="product sub-masthead">
+<header class="product sub-masthead" style="background-image: url(<?php the_field('hero_-_background'); ?>);">
 
 </header>
 
@@ -71,43 +71,35 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <h2 class="section-heading">The Only Coater You'll Ever Need</h2>
+                <h2 class="section-heading"><?php the_field('services_-_title'); ?></h2>
+
+                <?php
+              // check if the repeater field has rows of data
+              if( have_rows('services', 15) ):
+
+              // loop through the rows of data
+              while ( have_rows('services', 15) ) : the_row();
+
+              // vars
+              $image = get_sub_field('image', 15);
+              $title = get_sub_field('title', 15);
+              $snip = get_sub_field('snippet', 15);
+              $size = 'full'; // (thumbnail, medium, large, full or custom size)
+              ?>
+
+
                 <div class="row custom-padding">
                     <div class="col-md-2 perfect-center">
-                        <img src="/wp-content/themes/sage/assets/images/specialist-user.png" alt="We value our customers and their time." class="img-fluid" />
+                        <img src="<?php echo $image; ?>" alt="We value our customers and their time." class="img-fluid" />
                     </div>
                     <div class="col-md-10">
-                        <h4 class="row-heading">customer service</h4>
-                        <p class="row-details">We value our customers and their time. Our communication is top notch, and our pickups and deliveries are on time, so you’ll never be left waiting around. You can keep your business moving, because you’ll experience less downtime with our fast turnarounds.</p>
+                        <h4 class="row-heading"><?php echo $title; ?></h4>
+                        <p class="row-details"><?php echo $snip; ?></p>
                     </div>
                 </div>
-                <div class="row custom-padding">
-                    <div class="col-md-2 perfect-center">
-                        <img src="/wp-content/themes/sage/assets/images/specialist-user.png" alt="Safety is a priority at North Basin" class="img-fluid" />
-                    </div>
-                    <div class="col-md-10">
-                        <h4 class="row-heading">safety</h4>
-                        <p class="row-details">Safety is a priority at North Basin, and we care about our people and your people. By keeping everyone safe, we prevent expensive delays. We hold our team and our facilities to the highest safety standards, and our safety record speaks for itself.</p>
-                    </div>
-                </div>
-                <div class="row custom-padding">
-                    <div class="col-md-2 perfect-center">
-                        <img src="/wp-content/themes/sage/assets/images/nace-icon.png" alt="With North Basin, you know you’re getting a quality product." class="img-fluid" />
-                    </div>
-                    <div class="col-md-10">
-                        <h4 class="row-heading">quality control</h4>
-                        <p class="row-details">With North Basin, you know you’re getting a quality product. Our vigorous inspection includes wet sponge holiday detection millimeter thickness checks. NACE-certified inspectors check every pipe for the highest quality assurance.</p>
-                    </div>
-                </div>
-                <div class="row custom-padding">
-                    <div class="col-md-2 perfect-center">
-                        <img src="/wp-content/themes/sage/assets/images/green-earth.png" alt="Preventing corrosion is good for the planet and good for business." class="img-fluid" />
-                    </div>
-                    <div class="col-md-10">
-                        <h4 class="row-heading">enviromentally friendly</h4>
-                        <p class="row-details">Preventing corrosion is good for the planet and good for business. Our products are greener than traditional methods, avoiding air pollution and producing less waste. We’re committed to a clean planet and a clean work environment.</p>
-                    </div>
-                </div>
+
+              <?php endwhile; ?>
+              <?php endif; ?>
 
             </div>
             <div class="col-md-2"></div>
@@ -123,8 +115,8 @@
 
                     </div>
                     <div class="col-md-10">
-                        <h4 class="section-heading">what is powder coating?</h4>
-                        <p class="section-details">Dependable and cost effective, powder coating consists is mixture of finely ground particles of pigments and resins sprayed (normally electrostatically) to a surface. It is then heated and fused into a smooth coating. Our powder coating system, XTRA SHIELD™, consists of a zinc-rich epoxy primer and a topcoat of high quality polyester.</p>
+                        <h4 class="section-heading"><?php the_field('pc_-_title'); ?></h4>
+                        <p class="section-details"><?php the_field('pc_-_para'); ?></p>
                         <a href="#" class="download-link">download resources <img src="/wp-content/themes/sage/assets/images/google-drive-pdf-file.png" alt="Dependable and cost effective, powder coating consists is mixture of finely ground"/></a>
                     </div>
                     <div class="col-md-1">
@@ -160,8 +152,8 @@
 
                         </div>
                         <div class="col-md-10">
-                            <h4 class="section-heading">What is Fusion Bonded Epoxy?</h4>
-                            <p class="section-details">Fusion Bonded Epoxy (FBE) is an epoxy-based powder coating that is applied to pipe and steel to protect from corrosion. The powder is applied to the substrate, normally to about 400 degrees Fahrenheit, where the powder melts into a liquid form and becomes a solid coating by chemical cross-linking. This process is known as fusion bonding, and will greatly extend the life of your pipes.</p>
+                            <h4 class="section-heading"><?php the_field('fbs_-_title'); ?></h4>
+                            <p class="section-details"><?php the_field('fbs_-_para'); ?></p>
                             <a href="#" class="download-link">download resources <img src="/wp-content/themes/sage/assets/images/google-drive-pdf-file.png" alt="Fusion Bonded Epoxy (FBE) is an epoxy-based powder coating that is applied"/></a>
                         </div>
                         <div class="col-md-1">
@@ -194,15 +186,21 @@
         </div>
     </div>
 </section>
-<section class="make-it-happen grey-bg">
+<section class="make-it-happen grey-bg" style="background-image: url(<?php the_field('make_it_happen_-_bg'); ?>);">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h3 class="section-heading">LET'S MAKE IT HAPPEN</h3>
-                <p class="section-details">You are welcome to contact us about any of our services. We welcome all of your comments and suggestions. Please enter your contact information, and one of our team members will get back with you as soon as possible.</p>
+                <h3 class="section-heading"><?php the_field('make_it_happen_-_title'); ?></h3>
+                <p class="section-details"><?php the_field('make_it_happen_-_para'); ?></p>
             </div>
             <div class="col-md-7">
-                <form>
+              <form>
+                  <div class="row">
+                    <?php the_field('form'); ?>
+                  </div>
+              </form>
+
+<!--              <form>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -228,6 +226,7 @@
                         </div>
                     </div>
                 </form>
+-->
             </div>
 
         </div>
@@ -237,8 +236,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 perfect-center">
-                <h2 class="section-heading">Save Money with Carbon Steel Coating</h2>
-                <h4 class="section-subheading">Carbon Steel Coated Pipe vs Stainless Steel</h4>
+                <h2 class="section-heading"><?php the_field('save_money_-_title'); ?></h2>
+                <h4 class="section-subheading"><?php the_field('save_money_-_st'); ?></h4>
                 <div class="graph-representation">
                     <h5><img src="/wp-content/themes/sage/assets/images/rectangle-11.png"  alt="Carbon steel coated"/> carbon steel coated</h5>
                     <h5><img src="/wp-content/themes/sage/assets/images/rectangle-11-copy.png"  alt="Stainless steel"/> stainless steel</h5>
@@ -250,12 +249,12 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="perfect-center">
-                            <img src="/wp-content/themes/sage/assets/images/graph-1.png" alt="Save Money with Carbon Steel Coating" class="img-fluid" />
+                            <img src="<?php the_field('save_money_-_image'); ?>" alt="Save Money with Carbon Steel Coating" class="img-fluid" />
                         </div>
                     </div>
                     <div class="col-md-4 padding-zero-sm">
-                        <h4 class="section-subheading custom-padding">Save Money</h4>
-                        <p class="section-details">Stainless steel can cost 3 to 6 times more than carbon steel coating. Carbon steel saves you money on both pipes and fittings.</p>
+                        <h4 class="section-subheading custom-padding"><?php the_field('save_money_-_h'); ?></h4>
+                        <p class="section-details"><?php the_field('save_money_-_d'); ?></p>
                     </div>
                 </div>
             </div>
@@ -263,12 +262,12 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="perfect-center">
-                            <img src="/wp-content/themes/sage/assets/images/graph-2.png" alt="Save Money with Carbon Steel Coating" class="img-fluid graph-2" />
+                            <img src="<?php the_field('welding_process_-_image'); ?>" alt="Save Money with Carbon Steel Coating" class="img-fluid graph-2" />
                         </div>
                     </div>
                     <div class="col-md-5">
-                        <h4 class="section-subheading custom-padding padding-zero-sm">Welding Process</h4>
-                        <p class="section-details">On every single weld, stainless steel can cost 25% more that carbon steel. Reduce costs throughout production and in the future.</p>
+                        <h4 class="section-subheading custom-padding padding-zero-sm"><?php the_field('welding_process_-_title'); ?></h4>
+                        <p class="section-details"><?php the_field('welding_process_-_description'); ?></p>
                     </div>
                 </div>
             </div>
@@ -281,21 +280,19 @@
         <div class="row margin-zero">
             <div class="col-md-6 padding-zero">
                 <div class="img-heading">
-                    <span>Lunch, Learn and Plant Walk-Throughs</span>
+                    <span><?php the_field('walk-throughs_-_title'); ?></span>
                 </div>
-                <img src="/wp-content/themes/sage/assets/images/img-3412.png" alt="Lunch, Learn and Plant Walk-Throughs" class="img-fluid custom-width" />
+                <img src="<?php the_field('walk-throughs_-_image'); ?>" alt="Lunch, Learn and Plant Walk-Throughs" class="img-fluid custom-width" />
             </div>
             <div class="col-md-6 flex">
                 <div class="customer-service">
                     <div class="block">
-                        <h4 class="service-heading">An Opportunity for You and Your Team</h4>
-                        <p class="text-muted">We'd love to treat you and your team to lunch and discuss the challenges of mitigating corrosion. We'll give engineers, project managers, and project designers important knowledge of the coating process, allowing for better piping designs and material choices for project feasibility. Our team will give you a tour of our facility and help you find ways to improve your operation, protect your investments, and reduce your number of pipe failures. We look forward to answering all of your questions.</p>
-                        <h4 class="service-heading">presenters</h4>
-                        <p class="text-muted">Rodney Blocker, General Manager – Responsible for daily operations and management of two coating facilities in Levelland & Odessa.
-                            Andrew Bushong, Regional Manager/Nace Level II Coating Inspector – Responsible for Quality program and operations for two coating facilities in Levelland and Odessa.</p>
-
+                        <h4 class="service-heading"><?php the_field('walk-throughs_-_sub_title_1'); ?></h4>
+                        <p class="text-muted"><?php the_field('walk-throughs_-_p1'); ?></p>
+                        <h4 class="service-heading"><?php the_field('walk-throughs_-_sub_title_2'); ?></h4>
+                        <p class="text-muted"><?php the_field('walk-throughs_-_p2'); ?></p>
                         <div class="btn">
-                            <a href="contact.html">register now<img src="/wp-content/themes/sage/assets/images/right-arrow-1.png" alt="An Opportunity for You and Your Team" class="img-fluid"/> </a>
+                            <a href="/contact">register now<img src="/wp-content/themes/sage/assets/images/right-arrow-1.png" alt="An Opportunity for You and Your Team" class="img-fluid"/> </a>
                         </div>
                     </div>
                 </div>
@@ -308,10 +305,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img src="/wp-content/themes/sage/assets/images/nac.png" class="img-fluid" alt="Established in 1943, NACE International is the world’s leading authority on corrosion prevention."/>
+                <img src="<?php the_field('nace_-_image'); ?>" class="img-fluid" alt="Established in 1943, NACE International is the world’s leading authority on corrosion prevention."/>
             </div>
             <div class="col-md-8 perfect-center">
-                <p class="text-muted">Established in 1943, NACE International is the world’s leading authority on corrosion prevention. We employ two NACE-certified inspectors, showing they received the best training. They consistently hold our coatings to the highest standards.</p>
+                <p class="text-muted"><?php the_field('nace_-_paragraph'); ?></p>
             </div>
         </div>
     </div>

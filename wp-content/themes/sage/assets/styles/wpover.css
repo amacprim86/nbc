@@ -76,3 +76,11 @@ footer {
   right: 8px;
   bottom: 40px;
 }
+.gform_wrapper h3.gform_title {
+  display: none;
+}
+
+/* FOR ADVANTAGE PAGE */
+.gform_wrapper {
+  margin-top: 0px !important;
+}

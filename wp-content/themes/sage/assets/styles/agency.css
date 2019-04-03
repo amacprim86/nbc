@@ -541,6 +541,9 @@ section#contact :-ms-input-placeholder {
 .north-basin .img-container {
     height: 155px;
     background-color: #d8d8d8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;

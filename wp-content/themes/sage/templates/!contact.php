@@ -63,7 +63,7 @@
 </nav>
 
 <!-- Header -->
-<header class="contact sub-masthead">
+<header class="contact sub-masthead" style="background-image: url(<?php the_field('c_hero_background'); ?>);">
 
 </header>
 
@@ -72,40 +72,41 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-1"></div>
+
+
+          <?php
+          // check if the repeater field has rows of data
+          if( have_rows('locations', 17) ):
+
+          // loop through the rows of data
+          while ( have_rows('locations', 17) ) : the_row();
+
+          // vars
+          $image = get_sub_field('image', 17);
+          $adr = get_sub_field('address', 17);
+          $size = 'full'; // (thumbnail, medium, large, full or custom size)
+          ?>
+
             <div class="col-md-5">
                 <div class="row">
                     <div class="col-md-5">
-                        <div class="img-container">
-                            <span>office photo here</span>
+                        <div class="img-container" style="background-image: url(<?php echo $image; ?>);">
+
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="img-heading">
-                            <h4><a href="https://goo.gl/maps/RcJmHC2QT312">North Basin Coating Inc.</a></h4>
-                            <p><a href="https://goo.gl/maps/RcJmHC2QT312">2041 W. State Rd 300</a><br>
-                                P.O. Box 730 Levelland, TX 79336<br>
-                                Tel: <a href="tel:806-894-1531">806-894-1531</a> - Fax: 806-894-8181</p>
+                            <?php echo $adr; ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="img-container">
-                            <span>office photo here</span>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="img-heading">
-                            <h4><a href="https://goo.gl/maps/G1oUKUHc5kz">North Basin Coating Inc.</a></h4>
-                            <p><a href="https://goo.gl/maps/G1oUKUHc5kz">3902 South County Road 1286</a><br>
-                                Odessa, TX 79765<br>
-                                Tel: <a href="tel:432-563-9600">432-563-9600</a> - Fax: 432-563-9601</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <?php endwhile; ?>
+          <?php endif; ?>
+
+
+
+
             <div class="col-md-1"></div>
         </div>
     </div>
@@ -115,11 +116,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h3 class="section-heading">LET'S MAKE IT HAPPEN</h3>
-                <p class="section-details">You are welcome to contact us about any of our services. We welcome all of your comments and suggestions. Please enter your contact information, and one of our team members will get back with you as soon as possible.</p>
+                <h3 class="section-heading"><?php the_field('make_it_happen_-_title'); ?></h3>
+                <p class="section-details"><?php the_field('make_it_happen_-_d'); ?></p>
             </div>
             <div class="col-md-7">
+
                 <form>
+                    <div class="row">
+                      <?php the_field('form'); ?>
+                    </div>
+                </form>
+<!--                <form>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -145,7 +152,14 @@
                         </div>
                     </div>
                 </form>
+-->
+            <style>
+            #gform_fields_1 {
+                margin-top: -24px !important;
+            }
+            </style>
             </div>
+
 
         </div>
     </div>
@@ -154,12 +168,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-7">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"><img src="/wp-content/themes/sage/assets/images/7136550f.png" alt="Serving the nation" class="img-fluid" /></a>
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"><img src="<?php the_field('serving_the_nation_-_image'); ?>" alt="Serving the nation" class="img-fluid" /></a>
             </div>
             <div class="col-md-5 flex-end">
                 <div class="section-details">
-                    <h2 class="section-heading">Serving the nation</h2>
-                    <h5 class="section-subheading">Selected Delivery in Texas and New Mexico</h5>
+                    <h2 class="section-heading"><?php the_field('serving_the_nation_-_title'); ?></h2>
+                    <h5 class="section-subheading"><?php the_field('serving_the_nation_-_subtitle'); ?></h5>
                     <div class="graph-representation">
                         <h5><span class="blue"></span> States Served to Date</h5>
                         <h5><span class="yellow"></span> delivery area</h5>

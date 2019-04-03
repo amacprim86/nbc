@@ -24,8 +24,7 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/wp-content/themes/sage/assets/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="/wp-content/themes/sage/assets/slick/slick-theme.css"/>
+
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/wp-content/themes/sage/assets/styles/agency.css" rel="stylesheet">
@@ -33,6 +32,9 @@
     <!-- WP OVERRIDE STYLES (AMAC) -->
     <link href="/wp-content/themes/sage/assets/styles/wpover.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!-- FLICKITY -->
+    <link rel="stylesheet" href="/wp-content/themes/sage/assets/flickity/flickity.css" media="screen">
+
 </head>
 
 
@@ -311,15 +313,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-7">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"><img src="/wp-content/themes/sage/assets/images/serving-img.png" alt="Serving the nation" class="img-fluid" /></a>
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"><img src="<?php the_field('sn_-_map_image'); ?>" alt="Serving the nation" class="img-fluid" /></a>
             </div>
             <div class="col-md-5 flex-end">
                 <div class="section-details">
                     <h2 class="section-heading"><?php the_field('serving_nation_-_title'); ?></h2>
-                    <h5 class="section-subheading">Selected Delivery in Texas and New Mexico</h5>
+                    <h5 class="section-subheading"><?php the_field('serving_nation_-_st'); ?></h5>
                     <div class="graph-representation">
-                        <h5><span class="blue"></span> States Served to Date</h5>
-                        <h5><span class="yellow"></span> delivery area</h5>
+                        <h5><span class="blue"></span><?php the_field('sn_-_map_serving'); ?></h5>
+                        <h5><span class="yellow"></span><?php the_field('sn_-_map_d'); ?></h5>
                     </div>
                 </div>
             </div>
@@ -328,7 +330,7 @@
 </section>
 
 
-    <div class="autoplay" style="">
+    <div class="autoplay flick" style="">
         <div class="az"><img src="/wp-content/themes/sage/assets/images/slider1.png" alt="Serving the nation"/></div>
         <div class="az"><img src="/wp-content/themes/sage/assets/images/slider2.png" alt="Serving the nation"/></div>
         <div class="az"><img src="/wp-content/themes/sage/assets/images/slider3.png" alt="Serving the nation"/></div>
@@ -341,16 +343,76 @@
         <div class="az"><img src="/wp-content/themes/sage/assets/images/slider5.png" alt="Serving the nation"/></div>
     </div>
 
-<style>
-.aut {
-  display: flex;
-  width: 100%;
-  max-width: 100%;
-}
-.autoplay {
+    <script>
+    var flky = new Flickity( '.flick', {
+      // options, defaults listed
 
-}
-</style>
+      accessibility: true,
+      // enable keyboard navigation, pressing left & right keys
+
+      autoPlay: 3000,
+      // advances to the next cell
+      // if true, default is 3 seconds
+      // or set time between advances in milliseconds
+      // i.e. `autoPlay: 1000` will advance every 1 second
+
+      cellAlign: 'center',
+      // alignment of cells, 'center', 'left', or 'right'
+      // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
+
+      cellSelector: undefined,
+      // specify selector for cell elements
+
+      contain: false,
+      // will contain cells to container
+      // so no excess scroll at beginning or end
+      // has no effect if wrapAround is enabled
+
+      draggable: true,
+      // enables dragging & flicking
+
+      freeScroll: false,
+      // enables content to be freely scrolled and flicked
+      // without aligning cells
+
+      friction: 0.2,
+      // smaller number = easier to flick farther
+
+      initialIndex: 0,
+      // zero-based index of the initial selected cell
+
+      percentPosition: true,
+      // sets positioning in percent values, rather than pixels
+      // Enable if items have percent widths
+      // Disable if items have pixel widths, like images
+
+      prevNextButtons: true,
+      // creates and enables buttons to click to previous & next cells
+
+      pageDots: true,
+      // create and enable page dots
+
+      resize: true,
+      // listens to window resize events to adjust size & positions
+
+      rightToLeft: false,
+      // enables right-to-left layout
+
+      setGallerySize: true,
+      // sets the height of gallery
+      // disable if gallery already has height set with CSS
+
+      watchCSS: false,
+      // watches the content of :after of the element
+      // activates if #element:after { content: 'flickity' }
+      // IE8 and Android 2.3 do not support watching :after
+      // set watch: 'fallbackOn' to enable for these browsers
+
+      wrapAround: true
+      // at end of cells, wraps-around to first for infinite scrolling
+
+    });
+    </script>
 
 <!-- Modal 1 -->
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -385,7 +447,9 @@
 </div>
 <?php get_template_part('footer'); ?>
 <!-- Bootstrap core JavaScript -->
+
 <script src="/wp-content/themes/sage/assets/scripts/jquery/jquery.min.js"></script>
+<script src="wp-content/themes/sage/assets/flickity/flickity.pkgd.js"></script>
 <script type="text/javascript" src="/wp-content/themes/sage/assets/scripts/jquery/jquery-migrate-1.2.1.min.js"></script>
 <script src="/wp-content/themes/sage/assets/scripts/bootstrap/bootstrap.bundle.min.js"></script>
 
@@ -395,44 +459,15 @@
 <!-- Contact form JavaScript -->
 <script src="/wp-content/themes/sage/assets/scripts/js/jqBootstrapValidation.js"></script>
 <script src="/wp-content/themes/sage/assets/scripts/js/contact_me.js"></script>
-<!--<script type="/wp-content/themes/sage/assets/slick/slick.min.js"></script>-->
 <!-- Custom scripts for this template -->
 <script src="/wp-content/themes/sage/assets/scripts/js/agency.js"></script>
+
+
+
+
+
 <script>
-    jQuery(document).ready(function( $ ) {
-        $('.autoplay').slick({
-            slidesToShow: 5,
-            slidesToScroll: 5,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            dots: false,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-    });
+
 //js for tabs
     $(document).ready(function () {
         $(function() {
@@ -467,6 +502,44 @@
         });
     })
 </script>
+
+
+
+
+
+
+<style>
+.flick {
+  width: 100%; /* full width */
+  height: 500px;
+  background: #FF4B53;
+
+  .az {
+    height: 100%;
+    width: auto;
+    img {
+      height: 100%;
+    }
+  }
+}
+/* position dots in gallery */
+.flickity-page-dots {
+  bottom: 12px;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid white;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white;
+}
+
+</style>
 
 
 
